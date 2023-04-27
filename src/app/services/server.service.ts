@@ -28,14 +28,16 @@ export class Server {
     storage: string;
     ram: string;
     hdd: string;
+    hardDiskType: string;
     location: string;
     price: string;
 
-    constructor(model: string, storage: string, ram: string, hdd: string, location: string, price: string) {
+    constructor(model: string, storage: string, ram: string, hdd: string, hardDiskType: string, location: string, price: string) {
         this.model = model;
         this.storage = storage;
         this.ram = ram;
         this.hdd = hdd;
+        this.hardDiskType = hardDiskType;
         this.location = location;
         this.price = price;
     }

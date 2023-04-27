@@ -3,18 +3,23 @@ import { ServerService } from '../services/server.service';
 
 interface Server {
   model: string;
+  storage: string;
   ram: string;
   hdd: string;
+  hardDiskType: string;
   location: string;
-  price: number;
+  price: string;
 }
 
 @Component({
   selector: 'app-server-list',
   templateUrl: './server-list.component.html',
-  styleUrls: ['./server-list.component.css']
+  styleUrls: ['./server-list.component.css'],
+  providers: [ServerService]
 })
 export class ServerListComponent implements OnInit {
+  constructor(private serverService: ServerService) { }
+  
   filter: {
     minStorage: number;
     maxStorage: number;
@@ -29,10 +34,10 @@ export class ServerListComponent implements OnInit {
     location: ''
   };
   servers: Server[] = [];
-  locationOptions: string[] = ['AmsterdamAMS-01', 'AmsterdamAMS-02', 'FrankfurtFRA-01', 'LondonLON-01', 'New YorkNYC-01', 'ParisCDG-01', 'San FranciscoSFO-01', 'SingaporeSIN-01', 'SydneySYD-01', 'TorontoYYZ-01'];
+  locationOptions: string[] = [];
   ramOptions: string[] = ['2GB', '4GB', '8GB', '12GB', '16GB', '24GB', '32GB', '48GB', '64GB', '96GB'];
 
-  constructor(private serverService: ServerService) { }
+ 
 
   ngOnInit(): void {
     this.getServerList();
