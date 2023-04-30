@@ -64,7 +64,8 @@
               "browserTarget": "servers_filters_frontend:build:production"
             },
             "development": {
-              "browserTarget": "servers_filters_frontend:build:development"
+              "browserTarget": "servers_filters_frontend:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

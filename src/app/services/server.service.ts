@@ -11,16 +11,16 @@ export class ServerService {
     constructor(private http: HttpClient) { }
 
     getServers(): Observable<any> {
-        return this.http.get(`http://127.0.0.1:8000/server/list`);
+        return this.http.get(`/server/list`);
     }
 
     filterServers(filter: any): Observable<any> {
         let ramString = Object.keys(filter.ram).join(',');
-        return this.http.get(`http://127.0.0.1:8000/server/list?minStorage=${filter.minStorage}&maxStorage=${filter.maxStorage}&ram=${ramString}&harddisk_type=${filter.harddiskType}&location=${filter.location}`)
+        return this.http.get(`/server/list?minStorage=${filter.minStorage}&maxStorage=${filter.maxStorage}&ram=${ramString}&harddisk_type=${filter.harddiskType}&location=${filter.location}`)
     }
 
     locationOptions(): Observable<any> {
-        return this.http.get(`http://127.0.0.1:8000/server/location`);
+        return this.http.get(`/server/location`);
     }
 }
 export class Server {

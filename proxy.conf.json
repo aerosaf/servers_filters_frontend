@@ -1,0 +1,10 @@
+{
+    "/server/list": {
+        "target": "https://localhost:8000",
+        "secure": false
+    },
+    "/server/location": {
+        "target": "https://localhost:8000",
+        "secure": false
+    }
+}
